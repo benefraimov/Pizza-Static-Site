@@ -43,6 +43,41 @@ body {
   padding: 20px;
 }
 
+.alert {
+  /* display */
+  display: none;
+
+  /* Positioning */
+  position: fixed;
+  top: -50px; /* Initially off-screen above */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+
+  /* Sizes */
+  width: 350px;
+  height: auto;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+  /* Text */
+  background-color: rgb(245, 243, 243);
+  color: #3a0404;
+  text-align: center;
+  font-size: 16px;
+
+  /* Transition for sliding effect */
+  transition: top 0.5s ease-in-out;
+}
+
+.alert-out {
+  top: -50px; /* Slide out of view */
+}
+
+.alert-in {
+  top: 20px; /* Slide into view */
+}
+
 /* Navbar Styles */
 .navbar {
   /* Flex configuration */
@@ -121,27 +156,33 @@ body {
   margin: 0 -20px;
 }
 
-.hero-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
+.hero-content {
+  h1,
+  p {
+    background-color: #0000005f;
+    border-radius: 5px;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  p {
+    padding: 2px 5px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
 
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  background-color: #ff6347;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #e55347;
+  .btn-primary:hover {
+    background-color: #e55347;
+  }
 }
 
 /* Pizza Gallery */
@@ -205,8 +246,8 @@ body {
 
   .modal-container {
     background-color: #0000009f;
-    height: 90%;
-    width: 50%;
+    height: 80%;
+    width: 30%;
     margin: auto;
     padding: 20px;
     display: flex;
@@ -240,8 +281,8 @@ body {
       align-items: center;
 
       .img-parent {
-        height: auto;
         width: 100%;
+        height: auto;
         img {
           border-radius: 15px;
           width: 100%;

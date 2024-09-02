@@ -19,10 +19,32 @@ function closeModal() {
 
 // Function to add a pizza to the cart
 function addToCart() {
+    const alertElement = document.getElementById('alert');
+    const pElement = document.querySelector('p');
+
+    alertElement.classList.add('alert-out');
+
     let pizzaName = document.getElementById('modalPizzaName').textContent;
     cart.push(pizzaName);
     updateCart();
-    alert(pizzaName + ' added to cart!');
+
+    pElement.textContent = pizzaName + ' added to cart!';
+
+    // Show the alert and slide it in
+    alertElement.style.display = 'block';
+    alertElement.classList.remove('alert-out');
+    alertElement.classList.add('alert-in');
+
+    // After 2 seconds, slide out the alert 
+    setTimeout(() => {
+        alertElement.classList.remove('alert-in');
+        alertElement.classList.add('alert-out');
+
+        // Hide the alert after it has slide out 
+        setTimeout(() => {
+            alertElement.style.display = 'none';
+        }, 500);// this timeout matches the css transition duration
+    }, 2000);
 }
 
 // Function to add a pizza to favorites
@@ -40,6 +62,7 @@ function addToFavorites() {
 // Function to update the cart display
 function updateCart() {
     // Logic to update cart UI dynamically (e.g., updating a cart icon or list)
+    localStorage.setItem('cart', JSON.stringify(cart))
     console.log('Cart:', cart);
 }
 
@@ -50,12 +73,41 @@ function updateFavorites() {
 }
 
 // Event listeners for modal close and other UI elements
-document.querySelector('.close').addEventListener('click', closeModal);
+// document.querySelector('.close').addEventListener('click', closeModal);
 
 // Example: Simulate cart and favorites display updates
 function simulateUIUpdate() {
     // Logic to update the UI based on the cart and favorites arrays
     console.log('Simulating UI updates...');
+    const cartItems = localStorage.getItem('cart')
+    if (cartItems) {
+        cartParsed = JSON.parse(cartItems);
+        cart.push(cartParsed);
+        console.log(cart)
+    }
+    const cartElement = document.getElementById('cartItems')
+    if (cartElement) {
+        // Clear the existing content
+        cartElement.innerHTML = '';
+
+        // Create a new ul element
+        const cartList = document.createElement('ul');
+
+        // Iterate over the cart array and create list items
+        cart.forEach((item, index) => {
+            // Create a new li element
+            const cartItem = document.createElement('li');
+
+            // Set the text content to the current item
+            cartItem.textContent = item;
+
+            // Append the li to the ul
+            cartList.appendChild(cartItem);
+        });
+
+        // Append the ul to the cart element
+        cartElement.appendChild(cartList);
+    }
 }
 
 // Initialize page

@@ -25,33 +25,40 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="pizzas.html">Menu</a></li>
                     <li><a
-                            href="favorites.html">Favorites</a>
+                            href="./pages/about.html">About</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a
+                            href="./pages/pizzas.html">Menu</a>
                     </li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a
+                            href="./pages/favorites.html">Favorites</a>
+                    </li>
+                    <li><a
+                            href="./pages/contact.html">Contact</a>
+                    </li>
+                    <li><a href="./pages/cart.html">Cart</a>
+                    </li>
                 </ul>
                 <div class="hamburger-menu">
                     <ul class="hamburger-nav-links">
                         <li><a href="index.html"><i
                                     class="fa-solid fa-house-chimney fa-lg"></i></a>
                         </li>
-                        <li><a href="about.html"><i
+                        <li><a href="./pages/about.html"><i
                                     class="fa-solid fa-circle-info fa-lg"></i></a>
                         </li>
-                        <li><a href="pizzas.html"><i
+                        <li><a href="./pages/pizzas.html"><i
                                     class="fa-solid fa-pizza-slice fa-lg"></i></a>
                         </li>
-                        <li><a href="favorites.html"><i
+                        <li><a
+                                href="./pages/favorites.html"><i
                                     class="fa-regular fa-heart fa-lg"></i></a>
                         </li>
-                        <li><a href="contact.html"><i
+                        <li><a href="./pages/contact.html"><i
                                     class="fa-solid fa-file-contract fa-lg"></i></a>
                         </li>
-                        <li><a href="cart.html"><i
+                        <li><a href="./pages/cart.html"><i
                                     class="fa-solid fa-baby-carriage fa-lg"></i></a>
                         </li>
                     </ul>
@@ -67,7 +74,7 @@
                     <p>Order your favorite pizza from the
                         comfort of
                         your home!</p>
-                    <a href="pizzas.html"
+                    <a href="./pages/pizzas.html"
                         class="btn-primary">View
                         Menu</a>
                 </div>
@@ -107,21 +114,31 @@
 
             <!-- Modal -->
             <div id="pizzaModal" class="modal">
-                <div class="modal-content">
-                    <span class="close"
-                        onclick="closeModal()">&times;</span>
-                    <h2 id="modalPizzaName">Pizza Name</h2>
-                    <img id="modalPizzaImage" src=""
-                        alt="Pizza Image">
-                    <p id="modalPizzaDescription">Pizza
-                        Description
-                    </p>
-                    <button class="btn-secondary"
-                        onclick="addToCart()">Add to
-                        Cart</button>
-                    <button class="btn-secondary"
-                        onclick="addToFavorites()">Add to
-                        Favorites</button>
+                <div class="modal-container">
+                    <div class="flex-1">
+                        <span class="close"
+                            onclick="closeModal()">&times;</span>
+                        <h2 id="modalPizzaName">Pizza Name
+                        </h2>
+                    </div>
+                    <div class="flex-2">
+                        <div class="img-parent">
+                            <img id="modalPizzaImage" src=""
+                                alt="Pizza Image">
+                        </div>
+                    </div>
+                    <div class="flex-3">
+                        <p id="modalPizzaDescription">Pizza
+                            Description
+                        </p>
+                        <button class="btn-secondary"
+                            onclick="addToCart()">Add to
+                            Cart</button>
+                        <button class="btn-secondary"
+                            onclick="addToFavorites()">Add
+                            to
+                            Favorites</button>
+                    </div>
                 </div>
             </div>
         </main>

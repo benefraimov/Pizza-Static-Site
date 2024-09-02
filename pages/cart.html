@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-    <title>My Favorites | Pizza Restaurant</title>
+    <title>Cart | Pizza Restaurant</title>
     <script src="https://kit.fontawesome.com/27af14f8be.js"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/style.css">
@@ -20,12 +20,13 @@
             <nav class="navbar">
                 <div class="logo-container">
                     <div class="img-parent">
-                        <img src="./images/logos/logo1.png"
+                        <img src="../images/logos/logo1.png"
                             alt="Logo" class="logo-img" />
                     </div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a>
+                    </li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="pizzas.html">Menu</a></li>
                     <li><a
@@ -37,7 +38,7 @@
                 </ul>
                 <div class="hamburger-menu">
                     <ul class="hamburger-nav-links">
-                        <li><a href="index.html"><i
+                        <li><a href="../index.html"><i
                                     class="fa-solid fa-house-chimney fa-lg"></i></a>
                         </li>
                         <li><a href="about.html"><i
@@ -61,34 +62,16 @@
         </header>
         <main class="main-content">
 
-            <!-- Favorites Section -->
-            <section class="favorites">
-                <h1>My Favorite Pizzas</h1>
-                <div class="pizza-grid" id="favoritesGrid">
-                    <!-- Favorite pizzas will be dynamically inserted here using JavaScript -->
+            <!-- Cart Section -->
+            <section class="cart">
+                <h1>Your Cart</h1>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be dynamically inserted here using JavaScript -->
                 </div>
+                <button class="btn-primary"
+                    onclick="checkout()">Proceed to
+                    Checkout</button>
             </section>
-
-            <!-- Modal -->
-            <div id="pizzaModal" class="modal">
-                <div class="modal-content">
-                    <span class="close"
-                        onclick="closeModal()">&times;</span>
-                    <h2 id="modalPizzaName">Pizza Name</h2>
-                    <img id="modalPizzaImage" src=""
-                        alt="Pizza Image">
-                    <p id="modalPizzaDescription">Pizza
-                        Description
-                    </p>
-                    <button class="btn-secondary"
-                        onclick="addToCart()">Add to
-                        Cart</button>
-                    <button class="btn-secondary"
-                        onclick="removeFromFavorites()">Remove
-                        from
-                        Favorites</button>
-                </div>
-            </div>
         </main>
         <!-- Footer -->
         <footer>
