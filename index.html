@@ -5,14 +5,142 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pizza Restaurant | Home</title>
+    <script src="https://kit.fontawesome.com/27af14f8be.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 
 <body>
-    <h1>
-        Hello from caddy
-    </h1>
-    <h2>Another test</h2>
+    <div class="main-container">
+        <!-- Header -->
+        <header>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <div class="img-parent">
+                        <img src="./images/logos/logo1.png"
+                            alt="Logo" class="logo-img" />
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pizzas.html">Menu</a></li>
+                    <li><a
+                            href="favorites.html">Favorites</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a>
+                    </li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <ul class="hamburger-nav-links">
+                        <li><a href="index.html"><i
+                                    class="fa-solid fa-house-chimney fa-lg"></i></a>
+                        </li>
+                        <li><a href="about.html"><i
+                                    class="fa-solid fa-circle-info fa-lg"></i></a>
+                        </li>
+                        <li><a href="pizzas.html"><i
+                                    class="fa-solid fa-pizza-slice fa-lg"></i></a>
+                        </li>
+                        <li><a href="favorites.html"><i
+                                    class="fa-regular fa-heart fa-lg"></i></a>
+                        </li>
+                        <li><a href="contact.html"><i
+                                    class="fa-solid fa-file-contract fa-lg"></i></a>
+                        </li>
+                        <li><a href="cart.html"><i
+                                    class="fa-solid fa-baby-carriage fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Delicious Pizza, Anytime</h1>
+                    <p>Order your favorite pizza from the
+                        comfort of
+                        your home!</p>
+                    <a href="pizzas.html"
+                        class="btn-primary">View
+                        Menu</a>
+                </div>
+            </section>
+
+            <!-- Pizza Gallery -->
+            <section class="pizza-gallery">
+                <h2>Featured Pizzas</h2>
+                <div class="pizza-grid">
+                    <div class="pizza-item"
+                        onclick="openModal('Margherita', 'pizza1.png', 'Classic cheese and tomato pizza with fresh basil.')">
+                        <img src="../images/pizzas/pizza1.png"
+                            alt="Margherita">
+                        <h3>Margherita</h3>
+                    </div>
+                    <div class="pizza-item"
+                        onclick="openModal('Pepperoni', 'pizza2.png', 'Spicy pepperoni with mozzarella cheese.')">
+                        <img src="../images/pizzas/pizza2.png"
+                            alt="Pepperoni">
+                        <h3>Pepperoni</h3>
+                    </div>
+                    <div class="pizza-item"
+                        onclick="openModal('Hawaiian', 'pizza3.png', 'Ham and pineapple with mozzarella and tomato sauce.')">
+                        <img src="../images/pizzas/pizza3.png"
+                            alt="Hawaiian">
+                        <h3>Hawaiian</h3>
+                    </div>
+                    <div class="pizza-item"
+                        onclick="openModal('BBQ Chicken', 'pizza4.png', 'BBQ sauce, chicken, red onions, and cilantro.')">
+                        <img src="../images/pizzas/pizza4.png"
+                            alt="BBQ Chicken">
+                        <h3>BBQ Chicken</h3>
+                    </div>
+                    <!-- Add more pizza items -->
+                </div>
+            </section>
+
+            <!-- Modal -->
+            <div id="pizzaModal" class="modal">
+                <div class="modal-content">
+                    <span class="close"
+                        onclick="closeModal()">&times;</span>
+                    <h2 id="modalPizzaName">Pizza Name</h2>
+                    <img id="modalPizzaImage" src=""
+                        alt="Pizza Image">
+                    <p id="modalPizzaDescription">Pizza
+                        Description
+                    </p>
+                    <button class="btn-secondary"
+                        onclick="addToCart()">Add to
+                        Cart</button>
+                    <button class="btn-secondary"
+                        onclick="addToFavorites()">Add to
+                        Favorites</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Contact us: 123-456-7890 | Email:
+                    info@pizzarestaurant.com</p>
+                <div class="social-media">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../javascript/script.js"></script>
 </body>
 
 </html>

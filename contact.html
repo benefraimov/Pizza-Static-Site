@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Pizza Restaurant</title>
+    <script src="https://kit.fontawesome.com/27af14f8be.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+    <div class="main-container">
+
+        <!-- Header -->
+        <header>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <div class="img-parent">
+                        <img src="./images/logos/logo1.png"
+                            alt="Logo" class="logo-img" />
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pizzas.html">Menu</a></li>
+                    <li><a
+                            href="favorites.html">Favorites</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a>
+                    </li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <ul class="hamburger-nav-links">
+                        <li><a href="index.html"><i
+                                    class="fa-solid fa-house-chimney fa-lg"></i></a>
+                        </li>
+                        <li><a href="about.html"><i
+                                    class="fa-solid fa-circle-info fa-lg"></i></a>
+                        </li>
+                        <li><a href="pizzas.html"><i
+                                    class="fa-solid fa-pizza-slice fa-lg"></i></a>
+                        </li>
+                        <li><a href="favorites.html"><i
+                                    class="fa-regular fa-heart fa-lg"></i></a>
+                        </li>
+                        <li><a href="contact.html"><i
+                                    class="fa-solid fa-file-contract fa-lg"></i></a>
+                        </li>
+                        <li><a href="cart.html"><i
+                                    class="fa-solid fa-baby-carriage fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+
+            <!-- Contact Form -->
+            <section class="contact">
+                <h1>Contact Us</h1>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name"
+                            name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email"
+                            name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone"
+                            name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="subject">Subject:</label>
+                        <input type="text" id="subject"
+                            name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="message">Message:</label>
+                        <textarea id="message"
+                            name="message" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="btn-primary">Send
+                        Message</button>
+                </form>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Contact us: 123-456-7890 | Email:
+                    info@pizzarestaurant.com</p>
+                <div class="social-media">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../javascript/script.js"></script>
+</body>
+
+</html>

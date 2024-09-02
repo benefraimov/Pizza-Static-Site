@@ -1,0 +1,137 @@
+/* Media Queries */
+@media only screen and (max-width: 1100px) {
+  .modal {
+    .modal-container {
+      width: 60%;
+      height: 85%;
+    }
+  }
+  /* padding: 20px;
+      height: 100%;
+      .flex-1 {
+        .close {
+          font-size: 40px;
+        }
+        h2 {
+        }
+      }
+      .flex-3 {
+        button {
+          width: 200px;
+          padding: 5px 10px;
+        }
+      }
+    } */
+  /* } */
+}
+@media only screen and (max-width: 900px) {
+  .modal {
+    .modal-container {
+      width: 70%;
+      height: 80%;
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .modal {
+    .modal-container {
+      width: 75%;
+      height: 85%;
+    }
+  }
+}
+@media (max-width: 570px) {
+  .main-container {
+    margin-top: 0px;
+  }
+  .hero {
+    margin-top: -20px;
+  }
+  .navbar .nav-links,
+  .navbar .logo-container {
+    display: none;
+  }
+
+  .navbar {
+    width: auto;
+    border-bottom-right-radius: 10px;
+
+    .hamburger-menu {
+      display: block;
+
+      .hamburger-nav-links {
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+
+        li {
+          a {
+            color: white;
+            cursor: pointer;
+          }
+          a:hover {
+            color: #ff6347;
+          }
+        }
+      }
+    }
+  }
+
+  .hero {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .modal {
+    .modal-container {
+      width: 85%;
+      height: 80%;
+    }
+  }
+
+  footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  .pizza-item h3 {
+    font-size: 1em;
+  }
+
+  .modal {
+    .modal-container {
+      width: 90%;
+      height: 70%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .modal {
+    .modal-container {
+      width: 95%;
+      height: 60%;
+    }
+  }
+}
