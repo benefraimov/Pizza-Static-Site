@@ -1,5 +1,5 @@
 /* Media Queries */
-@media only screen and (max-width: 1600px) {
+@media (max-width: 1600px) {
   .modal {
     .modal-container {
       width: 40%;
@@ -7,7 +7,7 @@
     }
   }
 }
-@media only screen and (max-width: 1350px) {
+@media (max-width: 1350px) {
   .modal {
     .modal-container {
       width: 40%;
@@ -15,7 +15,7 @@
     }
   }
 }
-@media only screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
   .modal {
     .modal-container {
       width: 60%;
@@ -40,7 +40,7 @@
     } */
   /* } */
 }
-@media only screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .modal {
     .modal-container {
       width: 70%;
@@ -48,7 +48,53 @@
     }
   }
 }
-@media only screen and (max-width: 650px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    padding: 20px;
+  }
+
+  .about h1 {
+    font-size: 2em;
+  }
+
+  .about p {
+    font-size: 1.1em;
+  }
+
+  .contact {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  .cart {
+    padding: 20px;
+  }
+
+  .cart h1 {
+    font-size: 2em;
+  }
+
+  .cart-items {
+    padding: 15px;
+  }
+
+  .cart-items li {
+    font-size: 1.1em;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 650px) {
   .modal {
     .modal-container {
       width: 75%;

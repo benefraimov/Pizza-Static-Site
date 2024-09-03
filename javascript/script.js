@@ -49,14 +49,53 @@ function addToCart() {
 
 // Function to add a pizza to favorites
 function addToFavorites() {
+    const alertElement = document.getElementById('alert');
+    const pElement = document.querySelector('p');
+
+    alertElement.classList.add('alert-out');
+
     let pizzaName = document.getElementById('modalPizzaName').textContent;
-    if (!favorites.includes(pizzaName)) {
-        favorites.push(pizzaName);
-        alert(pizzaName + ' added to favorites!');
+    let pizzaImage = document.getElementById('modalPizzaImage');
+    let pizzaDescription = document.getElementById('modalPizzaDescription').textContent;
+    const favoriteObj = {
+        name: pizzaName,
+        imgSrc: pizzaImage.src,
+        description: pizzaDescription,
+    }
+
+    let flag = true;
+
+    // Check if there a pizza name     
+    favorites.forEach((pizza) => {
+        if (pizza.name === pizzaName) {
+            flag = false;
+        }
+    })
+
+    // Check by flag if there a pizza already 
+    if (flag) {
+        favorites.push(favoriteObj);
+        pElement.textContent = pizzaName + ' added to Favorite 💗';
     } else {
-        alert(pizzaName + ' is already in favorites.');
+        pElement.textContent = pizzaName + ' is already in Favorite 💗';
     }
     updateFavorites();
+
+    // Show the alert and slide it in
+    alertElement.style.display = 'block';
+    alertElement.classList.remove('alert-out');
+    alertElement.classList.add('alert-in');
+
+    // After 2 seconds, slide out the alert 
+    setTimeout(() => {
+        alertElement.classList.remove('alert-in');
+        alertElement.classList.add('alert-out');
+
+        // Hide the alert after it has slide out 
+        setTimeout(() => {
+            alertElement.style.display = 'none';
+        }, 500);// this timeout matches the css transition duration
+    }, 2000);
 }
 
 // Function to update the cart display
@@ -69,20 +108,20 @@ function updateCart() {
 // Function to update the favorites display
 function updateFavorites() {
     // Logic to update favorites UI dynamically (e.g., updating a favorites icon or list)
+    localStorage.setItem('favorites', JSON.stringify(favorites))
     console.log('Favorites:', favorites);
 }
 
 // Event listeners for modal close and other UI elements
 // document.querySelector('.close').addEventListener('click', closeModal);
 
-// Example: Simulate cart and favorites display updates
-function simulateUIUpdate() {
-    // Logic to update the UI based on the cart and favorites arrays
-    console.log('Simulating UI updates...');
+function checkCart() {
     const cartItems = localStorage.getItem('cart')
     if (cartItems) {
         cartParsed = JSON.parse(cartItems);
-        cart.push(cartParsed);
+        cartParsed.forEach((cartItem) => {
+            cart.push(cartItem);
+        })
         console.log(cart)
     }
     const cartElement = document.getElementById('cartItems')
@@ -108,6 +147,41 @@ function simulateUIUpdate() {
         // Append the ul to the cart element
         cartElement.appendChild(cartList);
     }
+}
+
+function checkFavorites() {
+    const favoritesItems = localStorage.getItem('favorites')
+    if (favoritesItems) {
+        const favoritesParsed = JSON.parse(favoritesItems);
+        favoritesParsed.forEach((favItem) => {
+            favorites.push(favItem);
+        })
+        console.log(favorites)
+    }
+    const favoritesGrid = document.getElementById('favoritesGrid')
+    if (favoritesGrid) {
+        // Clear the existing content
+        favoritesGrid.innerHTML = '';
+
+        // Iterate over the cart array and create list items
+        favorites.forEach((favorite) => {
+            favoritesGrid.innerHTML += `
+            <div class="favorite-item" onclick="openModal('${favorite.name}', '${favorite.imgSrc.split('/')[5]}', '${favorite.description}')">
+                <img src="${favorite.imgSrc}" alt="${favorite.name}">
+                <h3>${favorite.name}</h3>
+                <p>${favorite.description}</p>
+            </div>
+        `;
+        });
+    }
+}
+
+// Example: Simulate cart and favorites display updates
+function simulateUIUpdate() {
+    // Logic to update the UI based on the cart and favorites arrays
+    console.log('Simulating UI updates...');
+    checkCart()
+    checkFavorites()
 }
 
 // Initialize page
